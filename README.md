@@ -1,4 +1,4 @@
-# The Outside Thorn
+## The Outside Thorn
 
 * The most big compilation list of linux commands of all times in all the multiverse
 
