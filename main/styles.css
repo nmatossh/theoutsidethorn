@@ -1,0 +1,60 @@
+/* Configuración básica */
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+/* Configuración de la tabla externa */
+.outer-table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+
+/* Configuración de la tabla interna */
+.inner-table {
+    width: 900px;
+    height: 720px;
+    margin: auto;
+    border: 0px solid black;
+}
+
+/* Aplica el efecto Jitter solo a la imagen de fondo */
+body {
+    background-image: url('001.jpg');
+    background-size: 102%; /* Agranda la imagen aún más para cubrir completamente los bordes */
+    background-position: center; /* Centra la imagen para expandirla en los 4 sentidos */
+    background-repeat: no-repeat;
+    animation: jitter-bg 0.1s infinite;
+    background-attachment: fixed;
+}
+
+/* Definición de la animación Jitter solo para el fondo */
+@keyframes jitter-bg {
+    0% {
+        background-position: center;
+    }
+    25% {
+        background-position: calc(50% - 2px) calc(50% + 2px);
+    }
+    50% {
+        background-position: calc(50% + 2px) calc(50% - 2px);
+    }
+    75% {
+        background-position: calc(50% - 2px) calc(50% - 2px);
+    }
+    100% {
+        background-position: calc(50% + 2px) calc(50% + 2px);
+    }
+}
+
+/* Estilos para la tabla principal */
+#main {
+    border: 2px solid #111111;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilos para las celdas de la tabla */
+td {
+    border: 0px solid black;
+}
