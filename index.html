@@ -1,84 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body, html {
-      height: 100%;
-      margin: 0;
-    }
-
-    .outer-table {
-      width: 100%;
-      height: 100%;
-      border-collapse: collapse;
-    }
-
-    .inner-table {
-      width: 900px;
-      height: 720px;
-      margin: auto; /* centrar tabla interna horizontalmente */
-      border: 0px solid black; /* ajustar borde */
-    }
-
-    body {
-      background-image: url(main/001.jpg);
-    }
-
-    #main {
-      border: 2px solid #111111; /* Cambia a 2px y color oscuro */
-      transition: background-color 0.3s ease; /* Suavizar la transición del color */
-    }
-
-    td {
-      border: 0px solid black;
-    }
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main/styles.css"> <!-- Vinculamos el CSS -->
 </head>
-<body>
-<table border="0" class="outer-table">
-    <tr>
-      <td>
-        <!-- inner table -->
-        <table align="center" cellpadding="0" cellspacing="0" class="inner-table">
-          <tr>
-            <td height="60" align="center" valign="middle" bgcolor="#E1E0E0">
-              <table width="100%" border="1" align="center" cellpadding="0" cellspacing="0" id="main">
+    <body>
+            <table border="0" class="outer-table">
+                <tr>
+                <td>
+                <!-- inner table -->
+                <table align="center" cellpadding="0" cellspacing="0" class="inner-table">
+                <tr>
+                <td height="60" align="center" valign="middle" bgcolor="#E1E0E0">
+                <table width="100%" border="1" align="center" cellpadding="0" cellspacing="0" id="main">
                 <tbody>
-                  <tr>
-                    <td width="900" height="60" align="center" valign="middle">
-                      <span style="font-size: 18px; font-weight: bold;">
-                        ¡¡¡THE MOST BIG COMPILATION LINUX COMMANDS OF ALL TIMES IN ALL THE MULTIVERSE!!!
-                      </span>
-                    </td>
-                  </tr>
+                <tr>
+                <td width="900" height="60" align="center" valign="middle">
+                <span style="font-size: 18px; font-weight: bold;">¡¡¡THE MOST BIG COMPILATION LINUX COMMANDS OF ALL TIMES IN ALL THE MULTIVERSE!!!</span>
+                </td>
+                </tr>
                 </tbody>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td height="720" align="center" valign="middle">
-              <iframe src="main.html" name="main" width="900" height="720" scrolling="Yes" frameborder="0"></iframe>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-<script>
-    // Array de colores
-     const colors = ["#FF0000", "#0000FF", "#00FF00", "#FFFF00"];
-    // Función para cambiar el color de fondo de la tabla
-    function changeTableBackgroundColor() {
-      // Elegir un color aleatorio del array
-      const randomColor = colors[Math.floor(Math.random() * colors.length)];
-      // Cambiar el color de fondo de la tabla con el id 'main'
-      document.getElementById('main').style.backgroundColor = randomColor;
-    }
-
-    // Cambiar el color de fondo de la tabla cada 2 segundos
-    setInterval(changeTableBackgroundColor, 100);
-  </script>
-</body>
+                </table>
+                </td>
+                </tr>
+                <tr>
+                <td height="720" align="center" valign="middle">
+                <iframe src="main.html" name="main" width="900" height="720" scrolling="Yes" frameborder="0"></iframe>
+                </td>
+                </tr>
+                </table>
+                </td>
+                </tr>
+            </table>
+        <script src="main/scripts.js"></script>
+    </body>
 </html>
