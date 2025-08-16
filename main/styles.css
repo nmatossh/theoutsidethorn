@@ -21,7 +21,7 @@ body, html {
 
 /* Aplica el efecto Jitter solo a la imagen de fondo */
 body {
-    background-image: url('001.jpg');
+    background-image: url('wall_thorn.jpg');
     background-size: 102%; /* Agranda la imagen aún más para cubrir completamente los bordes */
     background-position: center; /* Centra la imagen para expandirla en los 4 sentidos */
     background-repeat: no-repeat;
