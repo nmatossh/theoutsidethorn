@@ -1,7 +1,16 @@
 /* Configuración básica */
-body, html {
+html {
     height: 100%;
     margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto; /* Permite scroll horizontal si es necesario */
+    overflow-y: auto; /* Permite scroll vertical si es necesario */
 }
 
 /* Configuración de la tabla externa */
@@ -22,29 +31,30 @@ body, html {
 /* Aplica el efecto Jitter solo a la imagen de fondo */
 body {
     background-image: url('wall_thorn.jpg');
-    background-size: 102%; /* Agranda la imagen aún más para cubrir completamente los bordes */
-    background-position: center; /* Centra la imagen para expandirla en los 4 sentidos */
+    background-size: 110%; /* Aumenta el tamaño para cubrir los bordes durante el jitter */
+    background-position: center center; /* Centra la imagen */
     background-repeat: no-repeat;
+    background-attachment: fixed; /* Fija el fondo para que no se mueva con el scroll */
+    min-height: 100vh; /* Asegura que el body tenga al menos la altura de la ventana */
     animation: jitter-bg 0.1s infinite;
-    background-attachment: fixed;
 }
 
 /* Definición de la animación Jitter solo para el fondo */
 @keyframes jitter-bg {
     0% {
-        background-position: center;
+        background-position: center center;
     }
     25% {
-        background-position: calc(50% - 2px) calc(50% + 2px);
+        background-position: calc(50% - 1px) calc(50% + 1px);
     }
     50% {
-        background-position: calc(50% + 2px) calc(50% - 2px);
+        background-position: calc(50% + 1px) calc(50% - 1px);
     }
     75% {
-        background-position: calc(50% - 2px) calc(50% - 2px);
+        background-position: calc(50% - 1px) calc(50% - 1px);
     }
     100% {
-        background-position: calc(50% + 2px) calc(50% + 2px);
+        background-position: calc(50% + 1px) calc(50% + 1px);
     }
 }
 
