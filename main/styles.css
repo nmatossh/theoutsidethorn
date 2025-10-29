@@ -3,14 +3,17 @@ html {
     height: 100%;
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 body {
     height: 100%;
     margin: 0;
     padding: 0;
+    width: 100%;
     overflow-x: auto; /* Permite scroll horizontal si es necesario */
     overflow-y: auto; /* Permite scroll vertical si es necesario */
+    position: relative; /* Asegura el contexto de posicionamiento */
 }
 
 /* Configuración de la tabla externa */
@@ -31,11 +34,12 @@ body {
 /* Aplica el efecto Jitter solo a la imagen de fondo */
 body {
     background-image: url('wall_thorn.jpg');
-    background-size: 110%; /* Aumenta el tamaño para cubrir los bordes durante el jitter */
+    background-size: cover; /* Cubre toda la pantalla manteniendo proporción */
     background-position: center center; /* Centra la imagen */
     background-repeat: no-repeat;
     background-attachment: fixed; /* Fija el fondo para que no se mueva con el scroll */
     min-height: 100vh; /* Asegura que el body tenga al menos la altura de la ventana */
+    width: 100%; /* Asegura que el body ocupe todo el ancho */
     animation: jitter-bg 0.1s infinite;
 }
 
@@ -45,26 +49,40 @@ body {
         background-position: center center;
     }
     25% {
-        background-position: calc(50% - 1px) calc(50% + 1px);
+        background-position: calc(50% - 0.5px) calc(50% + 0.5px);
     }
     50% {
-        background-position: calc(50% + 1px) calc(50% - 1px);
+        background-position: calc(50% + 0.5px) calc(50% - 0.5px);
     }
     75% {
-        background-position: calc(50% - 1px) calc(50% - 1px);
+        background-position: calc(50% - 0.5px) calc(50% - 0.5px);
     }
     100% {
-        background-position: calc(50% + 1px) calc(50% + 1px);
+        background-position: calc(50% + 0.5px) calc(50% + 0.5px);
     }
 }
 
 /* Estilos para la tabla principal */
 #main {
     border: 2px solid #111111;
+    border-radius: 15px 15px 0 0; /* Redondea solo los bordes superiores */
+    background-color: transparent; /* Hace transparente el fondo */
     transition: background-color 0.3s ease;
 }
 
 /* Estilos para las celdas de la tabla */
 td {
     border: 0px solid black;
+}
+
+/* Estilos específicos para la celda del título */
+td[bgcolor="#E1E0E0"] {
+    background-color: transparent !important; /* Hace transparente el fondo de la celda del título */
+}
+
+/* Estilos para el iframe */
+iframe {
+    border-radius: 0 0 15px 15px; /* Redondea solo los bordes inferiores */
+    border: 2px solid #111111; /* Agrega borde para que coincida con el título */
+    border-top: none; /* Elimina el borde superior para que se conecte con el título */
 }
