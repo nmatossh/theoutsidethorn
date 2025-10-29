@@ -31,7 +31,7 @@ body {
     border: 0px solid black;
 }
 
-/* Aplica el efecto Jitter solo a la imagen de fondo */
+/* Imagen de fondo fija */
 body {
     background-image: url('wall_thorn.jpg');
     background-size: cover; /* Cubre toda la pantalla manteniendo proporción */
@@ -40,27 +40,8 @@ body {
     background-attachment: fixed; /* Fija el fondo para que no se mueva con el scroll */
     min-height: 100vh; /* Asegura que el body tenga al menos la altura de la ventana */
     width: 100%; /* Asegura que el body ocupe todo el ancho */
-    animation: jitter-bg 0.1s infinite;
 }
 
-/* Definición de la animación Jitter solo para el fondo */
-@keyframes jitter-bg {
-    0% {
-        background-position: center center;
-    }
-    25% {
-        background-position: calc(50% - 0.5px) calc(50% + 0.5px);
-    }
-    50% {
-        background-position: calc(50% + 0.5px) calc(50% - 0.5px);
-    }
-    75% {
-        background-position: calc(50% - 0.5px) calc(50% - 0.5px);
-    }
-    100% {
-        background-position: calc(50% + 0.5px) calc(50% + 0.5px);
-    }
-}
 
 /* Estilos para la tabla principal */
 #main {
@@ -85,4 +66,85 @@ iframe {
     border-radius: 0 0 15px 15px; /* Redondea solo los bordes inferiores */
     border: 2px solid #111111; /* Agrega borde para que coincida con el título */
     border-top: none; /* Elimina el borde superior para que se conecte con el título */
+}
+
+/* Personalización de la scrollbar del iframe - WebKit (Chrome, Safari, Edge) */
+iframe::-webkit-scrollbar {
+    width: 24px; /* Ancho de la scrollbar aumentado para coincidir con Firefox */
+    height: 24px; /* Alto de la scrollbar horizontal aumentado para coincidir con Firefox */
+    background: transparent; /* Fondo transparente para toda la scrollbar */
+}
+
+iframe::-webkit-scrollbar-track {
+    background: transparent !important; /* Fondo transparente forzado */
+    border-radius: 8px;
+}
+
+iframe::-webkit-scrollbar-thumb {
+    background: #555555 !important; /* Color gris más oscuro para el botón de scroll */
+    border-radius: 8px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+iframe::-webkit-scrollbar-thumb:hover {
+    background: #333333 !important; /* Color aún más oscuro al hacer hover */
+    background-clip: content-box;
+}
+
+iframe::-webkit-scrollbar-corner {
+    background: transparent !important; /* Esquina transparente */
+}
+
+/* Estilos para las flechas de la scrollbar */
+iframe::-webkit-scrollbar-button {
+    background: #555555 !important; /* Color gris oscuro para las flechas */
+    border-radius: 4px;
+}
+
+iframe::-webkit-scrollbar-button:hover {
+    background: #333333 !important; /* Color más oscuro al hacer hover */
+}
+
+iframe::-webkit-scrollbar-button:vertical:start:decrement {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='%23ffffff' d='M4 0l4 4H0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+iframe::-webkit-scrollbar-button:vertical:end:increment {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='%23ffffff' d='M4 8L0 4h8z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+iframe::-webkit-scrollbar-button:horizontal:start:decrement {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='%23ffffff' d='M0 4l4-4v8z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+iframe::-webkit-scrollbar-button:horizontal:end:increment {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='%23ffffff' d='M8 4L4 0v8z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Personalización de la scrollbar del iframe - Firefox */
+iframe {
+    scrollbar-width: thin; /* Scrollbar más delgada en Firefox */
+    scrollbar-color: #555555 transparent; /* Color del thumb y track en Firefox */
+}
+
+/* Estilos adicionales para forzar transparencia */
+iframe::-webkit-scrollbar-track-piece {
+    background: transparent !important;
+}
+
+iframe::-webkit-scrollbar-track-piece:start {
+    background: transparent !important;
+}
+
+iframe::-webkit-scrollbar-track-piece:end {
+    background: transparent !important;
 }
